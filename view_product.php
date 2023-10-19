@@ -17,7 +17,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
                     </a>
                     <ul class="nav nav-pills flex-column mt-4">
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
+                            <a href="dashboard.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     bar_chart_4_bars
                                 </span><span class="fs-4 ms-3 d-none d-sm-inline align-middle">Dashboard</span>
@@ -38,7 +38,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="view_product.php" class="nav-link text-white">
+                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     production_quantity_limits
                                 </span><span class="fs-4 ms-3 d-none d-sm-inline align-middle">View Products</span>

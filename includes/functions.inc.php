@@ -92,7 +92,7 @@ function signInUser($conn, $user_email, $user_password)
     $userEmailExist = userEmailExist($conn, $user_email);
     if ($userEmailExist === false) {
 
-        header('location: ../sign_in.php?error=emailNotExist');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/sign_in.php?error=emailNotExist');
         exit();
     }
 
@@ -101,13 +101,13 @@ function signInUser($conn, $user_email, $user_password)
     $checkPassword = password_verify($user_password, $hashedPassword);
 
     if ($checkPassword === false) {
-        header('location: ../sign_in.php?error=incorrectPassword');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/sign_in.php?error=incorrectPassword');
         exit();
     } elseif ($checkPassword === true) {
         session_start();
         $_SESSION["user_id"] = $userEmailExist["user_id"];
         $_SESSION["user_email"] = $userEmailExist["user_email"];
-        header('location: ../dashboard.php?error=none');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/dashboard.php?error=none');
         exit();
     }
 }

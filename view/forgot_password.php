@@ -28,11 +28,11 @@ $page_title = "Forgot Password - Soft Stock Solo Web Application";
                                         Forgot Password
                                     </p>
 
-                                    <form class="mx-1 mx-md-4 needs-validation" method="post" action="./validate_account.php" novalidate>
+                                    <form class="mx-1 mx-md-4 needs-validation" method="post" action="../includes/forgot_password.inc.php" novalidate>
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> -->
                                             <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="input-sign-in-email">Enter Your Email</label>
+                                                <label class="form-label" for="input-forgot-password-email">Enter Your Email</label>
                                                 <input type="email" id="input-forgot-password-email" class="form-control" name="input-forgot-password-email" required />
                                                 <div class="valid-feedback">Looks good!</div>
                                                 <div class="invalid-feedback">

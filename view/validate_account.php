@@ -28,21 +28,21 @@ $page_title = "Forgot Password - Soft Stock Solo Web Application";
                                         Validate Account
                                     </p>
 
-                                    <form class="mx-1 mx-md-4 needs-validation" method="post" action="./includes/sign_in.inc.php" novalidate>
+                                    <form class="mx-1 mx-md-4 needs-validation" method="post" action="../includes/validate_account.inc.php" novalidate>
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> -->
                                             <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="input-sign-in-email">Enter the OTP</label>
-                                                <input type="email" id="input-forgot-password-email" class="form-control" name="input-forgot-password-email" required />
+                                                <label class="form-label" for="input-validate-account-otp">Enter the OTP</label>
+                                                <input type="password" id="input-validate-account-otp" class="form-control" name="input-validate-account-otp" required />
                                                 <div class="valid-feedback">Looks good!</div>
                                                 <div class="invalid-feedback">
-                                                    Please enter your email.
+                                                    Please enter your OTP.
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button type="submit" class="btn btn-secondary btn-lg" name="validate_account_submit">
+                                            <button type="submit" class="btn btn-secondary btn-lg" name="validate-account-submit">
                                                 Validate
                                             </button>
                                         </div>
@@ -67,25 +67,14 @@ $page_title = "Forgot Password - Soft Stock Solo Web Application";
                                                 </div>
                                             </div>
                                         <?php
-                                        } else if ($_GET["error"] == "invalidEmail") {
+                                        } else if ($_GET["error"] == "incorrectOTP") {
                                         ?>
                                             <div class="alert alert-danger d-flex align-items-center" role="alert">
                                                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
                                                     <use xlink:href="#exclamation-triangle-fill" />
                                                 </svg>
                                                 <div>
-                                                    You have entered an invalid email address.
-                                                </div>
-                                            </div>
-                                        <?php
-                                        } else if ($_GET["error"] == "emailNotExist") {
-                                        ?>
-                                            <div class="alert alert-danger d-flex align-items-center" role="alert">
-                                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
-                                                    <use xlink:href="#exclamation-triangle-fill" />
-                                                </svg>
-                                                <div>
-                                                    You don't have an account. Please <a href="sign_up.php">Sign Up</a> here.
+                                                    You have entered an incorrect OTP.
                                                 </div>
                                             </div>
                                     <?php

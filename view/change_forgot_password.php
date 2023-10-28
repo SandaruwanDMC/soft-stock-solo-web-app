@@ -1,7 +1,8 @@
 <?php
-$page_title = "Sign In - Soft Stock Solo Web Application";
-require "../includes/head.inc.php"
+$page_title = "Change Forgot Password - Soft Stock Solo Web Application";
 ?>
+
+<?php require "../includes/head.inc.php" ?>
 
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -24,46 +25,42 @@ require "../includes/head.inc.php"
                             <div class="row justify-content-center">
                                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                                        Sign in
+                                        Change Forgot Password
                                     </p>
 
-                                    <form class="mx-1 mx-md-4 needs-validation" method="post" action="../includes/sign_in.inc.php" novalidate>
+                                    <form class="mx-1 mx-md-4 needs-validation" method="post" action="../includes//change_forgot_password.inc.php" novalidate>
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> -->
                                             <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="input-sign-in-email">Your Email</label>
-                                                <input type="email" id="input-sign-in-email" class="form-control" name="input-sign-in-email" required />
+                                                <label class="form-label" for="input-change-forgot-password-new-password">New Password</label>
+                                                <input type="password" id="input-change-forgot-password-new-password" class="form-control" name="input-change-forgot-password-new-password" required />
                                                 <div class="valid-feedback">Looks good!</div>
                                                 <div class="invalid-feedback">
-                                                    Please enter your email.
+                                                    Please enter your new password.
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="d-flex flex-row align-items-center mb-4">
-                                            <!-- <i class="fas fa-lock fa-lg me-3 fa-fw"></i> -->
+                                            <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> -->
                                             <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="input-sign-in-password">Password</label>
-                                                <input type="password" id="input-sign-in-password" class="form-control" name="input-sign-in-password" required />
+                                                <label class="form-label" for="input-change-forgot-password-confirm-password">Confirm Password</label>
+                                                <input type="password" id="input-change-forgot-password-confirm-password" class="form-control" name="input-change-forgot-password-confirm-password" required />
                                                 <div class="valid-feedback">Looks good!</div>
                                                 <div class="invalid-feedback">
-                                                    Please enter your password.
+                                                    Please enter your password again.
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="d-flex justify-content-center mb-5">
-                                            <a href="./forgot_password.php">Forgot Password?</a>
-                                        </div>
-
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button type="submit" class="btn btn-secondary btn-lg" name="sign_in_submit">
-                                                Sign In
+                                            <button type="submit" class="btn btn-secondary btn-lg" name="change_forgot_password_submit">
+                                                Change Password
                                             </button>
                                         </div>
 
-                                        <div class="d-flex justify-content-center mt-5">
-                                            <p>Don't have an account? <a href="./sign_up.php">Sign Up</a></p>
+                                        <div class="d-flex justify-content-center">
+                                            <p>Use another account? <a href="./sign_in.php">Sign In</a></p>
                                         </div>
 
                                     </form>
@@ -82,47 +79,14 @@ require "../includes/head.inc.php"
                                                 </div>
                                             </div>
                                         <?php
-                                        } else if ($_GET["error"] == "invalidEmail") {
+                                        } else if ($_GET["error"] == "passwordsDonNotMatch") {
                                         ?>
                                             <div class="alert alert-danger d-flex align-items-center" role="alert">
                                                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
                                                     <use xlink:href="#exclamation-triangle-fill" />
                                                 </svg>
                                                 <div>
-                                                    You have entered an invalid email address.
-                                                </div>
-                                            </div>
-                                        <?php
-                                        } else if ($_GET["error"] == "emailNotExist") {
-                                        ?>
-                                            <div class="alert alert-danger d-flex align-items-center" role="alert">
-                                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
-                                                    <use xlink:href="#exclamation-triangle-fill" />
-                                                </svg>
-                                                <div>
-                                                    You don't have an account. Please <a href="../view/sign_up.php">Sign Up</a> here.
-                                                </div>
-                                            </div>
-                                        <?php
-                                        } else if ($_GET["error"] == "incorrectPassword") {
-                                        ?>
-                                            <div class="alert alert-danger d-flex align-items-center" role="alert">
-                                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
-                                                    <use xlink:href="#exclamation-triangle-fill" />
-                                                </svg>
-                                                <div>
-                                                    Incorrect password. Please try again or reset the password.
-                                                </div>
-                                            </div>
-                                        <?php
-                                        } else if ($_GET["error"] == "passwordChanged") {
-                                        ?>
-                                            <div class="alert alert-success d-flex align-items-center" role="alert">
-                                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
-                                                    <use xlink:href="#check-circle-fill" />
-                                                </svg>
-                                                <div>
-                                                    Password is changed successfully. Please Sign In to continue.
+                                                    New Password and Confirm Password must be same.
                                                 </div>
                                             </div>
                                     <?php

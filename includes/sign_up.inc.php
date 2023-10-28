@@ -10,25 +10,25 @@ if (isset($_POST['sign_up_submit'])) {
     require_once '../controller/sign_up_controller.php';
 
     if (emptyInputs($user_email, $user_password, $user_password_repeat) !== false) {
-        header('location: ../view/sign_up.php?error=emptyInputs');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php?error=emptyInputs');
         exit();
     }
 
     if (invalidEmail($user_email) !== false) {
-        header('location: ../view/sign_up.php?error=invalidEmail');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php?error=invalidEmail');
         exit();
     }
 
     if (passwordMatch($user_password, $user_password_repeat) !== false) {
-        header('location: ../view/sign_up.php?error=passwordsDonNotMatch');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php?error=passwordsDonNotMatch');
         exit();
     }
     if (userEmailExist($conn, $user_email) !== false) {
-        header('location: ../view/sign_up.php?error=emailExist');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php?error=emailExist');
         exit();
     }
     createUser($conn, $user_email, $user_password);
 } else {
-    header("location: ../view/sign_up.php");
+    header("location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php");
     exit();
 }

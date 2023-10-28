@@ -39,6 +39,6 @@ function createUser($conn, $user_email, $user_password)
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header('location: ../view/signup.php?error=none');
+    header('location: ../view/sign_up.php?error=none');
     exit();
 }

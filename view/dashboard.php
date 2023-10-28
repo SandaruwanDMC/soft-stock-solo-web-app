@@ -1,10 +1,10 @@
-<?php require "./includes/session.inc.php"; ?>
+<?php require "../includes/session.inc.php"; ?>
 
 <?php
 $page_title = "Home - Soft Stock Solo Web Application";
 ?>
 
-<?php require "./includes/head.inc.php"; ?>
+<?php require "../includes/head.inc.php"; ?>
 
 <body>
     <div class="container-fluid">
@@ -60,13 +60,29 @@ $page_title = "Home - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="./includes/sign_out.inc.php" class="nav-link text-white">
+                            <a href="../includes/sign_out.inc.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">logout</span><span class="fs-4 ms-3 d-none d-sm-inline align-middle">Sign Out</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
+            <!-- <div class="col">
+                <div class="container mt-4">
+                    <h1>Form Title</h1>
+                    <form action="your_action.php" method="POST">>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div> -->
         </div>
     </div>
 </body>
@@ -112,4 +128,4 @@ $page_title = "Home - Soft Stock Solo Web Application";
     });
 </script>
 
-<?php require "./includes/foot.inc.php"; ?>
+<?php require "../includes/foot.inc.php"; ?>

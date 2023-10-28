@@ -1,10 +1,10 @@
-<?php require "./includes/session.inc.php"; ?>
+<?php require "../includes/session.inc.php"; ?>
 
 <?php
 $page_title = "Home - Soft Stock Solo Web Application";
 ?>
 
-<?php require "./includes/head.inc.php"; ?>
+<?php require "../includes/head.inc.php"; ?>
 
 <body>
     <div class="container-fluid">
@@ -60,7 +60,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="./includes/sign_out.inc.php" class="nav-link text-white">
+                            <a href="../includes/sign_out.inc.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">logout</span><span class="fs-4 ms-3 d-none d-sm-inline align-middle">Sign Out</span>
                             </a>
                         </li>
@@ -112,4 +112,4 @@ $page_title = "Home - Soft Stock Solo Web Application";
     });
 </script>
 
-<?php require "./includes/foot.inc.php"; ?>
+<?php require "../includes/foot.inc.php"; ?>

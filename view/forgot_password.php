@@ -1,8 +1,8 @@
 <?php
-$pageTitle = "Sign In - Soft Stock Solo Web Application";
+$page_title = "Forgot Password - Soft Stock Solo Web Application";
 ?>
 
-<?php require "./includes/head.inc.php" ?>
+<?php require "../includes/head.inc.php" ?>
 
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -16,7 +16,7 @@ $pageTitle = "Sign In - Soft Stock Solo Web Application";
             <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
         </symbol>
     </svg>
-    <section class="vh-100" style="background-color: #DCE1FF">
+    <section class="vh-100" style="background-color: #EDEDED">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-12 col-xl-11">
@@ -25,15 +25,15 @@ $pageTitle = "Sign In - Soft Stock Solo Web Application";
                             <div class="row justify-content-center">
                                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                                        Sign in
+                                        Forgot Password
                                     </p>
 
-                                    <form class="mx-1 mx-md-4 needs-validation" method="post" action="./includes/sign_in.inc.php" novalidate>
+                                    <form class="mx-1 mx-md-4 needs-validation" method="post" action="./validate_account.php" novalidate>
                                         <div class="d-flex flex-row align-items-center mb-4">
-                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> -->
                                             <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="input-sign-in-email">Your Email</label>
-                                                <input type="email" id="input-sign-in-email" class="form-control" name="input-sign-in-email" required />
+                                                <label class="form-label" for="input-sign-in-email">Enter Your Email</label>
+                                                <input type="email" id="input-forgot-password-email" class="form-control" name="input-forgot-password-email" required />
                                                 <div class="valid-feedback">Looks good!</div>
                                                 <div class="invalid-feedback">
                                                     Please enter your email.
@@ -41,27 +41,20 @@ $pageTitle = "Sign In - Soft Stock Solo Web Application";
                                             </div>
                                         </div>
 
-                                        <div class="d-flex flex-row align-items-center mb-4">
-                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                                            <div class="form-outline flex-fill mb-0">
-                                                <label class="form-label" for="input-sign-in-password">Password</label>
-                                                <input type="password" id="input-sign-in-password" class="form-control" name="input-sign-in-password" required />
-                                                <div class="valid-feedback">Looks good!</div>
-                                                <div class="invalid-feedback">
-                                                    Please enter your password.
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex justify-content-center mb-5">
-                                            <a href="#!">Forgot Password?</a>
-                                        </div>
-
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button type="submit" class="btn btn-secondary btn-lg" name="sign_in_submit">
-                                                Sign In
+                                            <button type="submit" class="btn btn-secondary btn-lg" name="forgot_password_submit">
+                                                Send OTP
                                             </button>
                                         </div>
+
+                                        <div class="d-flex justify-content-center mt-5">
+                                            <p>Don't have an account? <a href="./sign_up.php">Sign Up</a></p>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center">
+                                            <p>Have an account? <a href="./sign_in.php">Sign In</a></p>
+                                        </div>
+
                                     </form>
 
                                     <?php
@@ -99,17 +92,6 @@ $pageTitle = "Sign In - Soft Stock Solo Web Application";
                                                     You don't have an account. Please <a href="sign_up.php">Sign Up</a> here.
                                                 </div>
                                             </div>
-                                        <?php
-                                        } else if ($_GET["error"] == "incorrectPassword") {
-                                        ?>
-                                            <div class="alert alert-danger d-flex align-items-center" role="alert">
-                                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
-                                                    <use xlink:href="#exclamation-triangle-fill" />
-                                                </svg>
-                                                <div>
-                                                    Incorrect password. Please try again or reset the password.
-                                                </div>
-                                            </div>
                                     <?php
                                         }
                                     }
@@ -118,7 +100,7 @@ $pageTitle = "Sign In - Soft Stock Solo Web Application";
 
                                 </div>
                                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                    <img src="./images/signup.jpg" class="img-fluid" alt="Sample image" />
+                                    <img src="../images/signup.jpg" class="img-fluid" alt="Sample image" />
                                 </div>
                             </div>
                         </div>
@@ -150,4 +132,4 @@ $pageTitle = "Sign In - Soft Stock Solo Web Application";
         })();
     </script>
 
-<?php require "./includes/foot.inc.php"; ?>
+    <?php require "../includes/foot.inc.php"; ?>

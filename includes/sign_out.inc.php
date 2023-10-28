@@ -4,7 +4,7 @@ session_start();
 session_unset();
 session_destroy();
 
-header('location: ../index.php');
+header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/index.php');
         exit;
 
 
@@ -22,4 +22,4 @@ header('location: ../index.php');
 // }
 
 // $pageTitle = "Home - Soft Stock Solo Web Application";
-// ?>
+// 

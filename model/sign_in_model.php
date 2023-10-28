@@ -7,7 +7,7 @@ function userEmailExist($conn, $user_email)
     $sql = "SELECT * FROM user WHERE user_email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: ../view/sign_up.php?error=stmtFailed');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php?error=stmtFailed');
         exit();
     }
 
@@ -31,7 +31,7 @@ function signInUser($conn, $user_email, $user_password)
     $userEmailExist = userEmailExist($conn, $user_email);
     if ($userEmailExist === false) {
 
-        header('location: ../view/sign_in.php?error=emailNotExist');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_in.php?error=emailNotExist');
         exit();
     }
 
@@ -42,7 +42,7 @@ function signInUser($conn, $user_email, $user_password)
     $checkPassword = password_verify($user_password, $hashedPassword);
 
     if ($checkPassword === false) {
-        header('location: ../view/sign_in.php?error=incorrectPassword');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_in.php?error=incorrectPassword');
         exit();
     } elseif ($checkPassword === true) {
         session_start();
@@ -52,7 +52,7 @@ function signInUser($conn, $user_email, $user_password)
         if($is_verified !== 1){
             generateOTP($conn, $user_id, $user_email);
         } else {
-            header('location: ../view/dashboard.php?error=none');
+            header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/dashboard.php?error=none');
             exit();
         }
     }
@@ -64,7 +64,7 @@ function generateOTP($conn, $user_id, $user_email) {
     $sql = "UPDATE user SET is_verified = ?, email_verification_code = ? WHERE user_id = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: ../view/sign_up.php?error=stmtFailed');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php?error=stmtFailed');
         exit();
     }
 
@@ -75,5 +75,6 @@ function generateOTP($conn, $user_id, $user_email) {
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    sendOTP($otp, $user_email);
+    $type = "verify_account";
+    sendOTP($otp, $user_email, $type);
 }

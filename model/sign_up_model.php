@@ -5,7 +5,7 @@ function userEmailExist($conn, $user_email)
     $sql = "SELECT * FROM user WHERE user_email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: ../view/sign_up.php?error=stmtFailed');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php?error=stmtFailed');
         exit();
     }
 
@@ -29,7 +29,7 @@ function createUser($conn, $user_email, $user_password)
     $sql = "INSERT INTO user(user_email, user_password) VALUES(?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: ../view/sign_up.php?error=stmtFailed');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php?error=stmtFailed');
         exit();
     }
 
@@ -39,6 +39,6 @@ function createUser($conn, $user_email, $user_password)
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header('location: ../view/sign_up.php?error=none');
+    header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php?error=none');
     exit();
 }

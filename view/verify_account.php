@@ -35,7 +35,7 @@ $page_title = "Forgot Password - Soft Stock Solo Web Application";
                                             <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> -->
                                             <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="input-otp">Enter the OTP</label>
-                                                <input type="number" id="input-otp" class="form-control" name="input-otp" required />
+                                                <input type="password" id="input-otp" class="form-control" name="input-verify-account-otp" required />
                                                 <div class="valid-feedback">Looks good!</div>
                                                 <div class="invalid-feedback">
                                                     Please enter your OTP.
@@ -44,7 +44,7 @@ $page_title = "Forgot Password - Soft Stock Solo Web Application";
                                         </div>
 
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                            <button type="submit" class="btn btn-secondary btn-lg" name="verify_account_submit">
+                                            <button type="submit" class="btn btn-secondary btn-lg" name="verify-account-submit">
                                                 Verify
                                             </button>
                                         </div>
@@ -69,25 +69,14 @@ $page_title = "Forgot Password - Soft Stock Solo Web Application";
                                                 </div>
                                             </div>
                                         <?php
-                                        } else if ($_GET["error"] == "invalidEmail") {
+                                        } else if ($_GET["error"] == "incorrectOTP") {
                                         ?>
                                             <div class="alert alert-danger d-flex align-items-center" role="alert">
                                                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
                                                     <use xlink:href="#exclamation-triangle-fill" />
                                                 </svg>
                                                 <div>
-                                                    You have entered an invalid email address.
-                                                </div>
-                                            </div>
-                                        <?php
-                                        } else if ($_GET["error"] == "emailNotExist") {
-                                        ?>
-                                            <div class="alert alert-danger d-flex align-items-center" role="alert">
-                                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
-                                                    <use xlink:href="#exclamation-triangle-fill" />
-                                                </svg>
-                                                <div>
-                                                    You don't have an account. Please <a href="sign_up.php">Sign Up</a> here.
+                                                    You have entered an incorrect OTP.
                                                 </div>
                                             </div>
                                     <?php

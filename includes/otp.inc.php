@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require '../vendor/autoload.php';
 
-function sendOTP($otp, $user_email)
+function sendOTP($otp, $user_email, $type)
 {
 
     $mail = new PHPMailer(true);
@@ -31,19 +31,30 @@ function sendOTP($otp, $user_email)
         $mail->Username = 'dmcsac2018@gmail.com';
         $mail->Password = 'avjjrtjjidmyaenv';
 
-        $otpMessage = "<h3>This is email is for sending you the OTP.</h3></br><p>Your OTP : ".$otp."</p>";
+        if ($type === "forgot_password") {
+            $emailSubject = 'Soft Stock Solo - Reset Password OTP';
+            $otpMessage = "<h3>This is email is for sending you the OTP.</h3></br><p>Your OTP : " . $otp . "</p>";
+        } else if ($type === "verify_account") {
+            $emailSubject = 'Soft Stock Solo - Verify Email';
+            $otpMessage = "<h3>This is email is for sending you the OTP.</h3></br><p>Your OTP : " . $otp . "</p>";
+        }
 
         $mail->setFrom('dmcsac2018@gmail.com', 'Soft Stock Solo');
-        $mail->Subject = 'Soft Stock Solo - Verify Email';
+        $mail->Subject = $emailSubject;
         $mail->MsgHTML($otpMessage);
         $mail->addAddress($user_email);
         // $mail->addAddress('dmcsac@outlook.com');
 
         $mail->send();
-        header('location: ../view/verify_account.php?error=none');
-        exit();
+        if ($type === "forgot_password") {
+            header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/validate_account.php?error=none');
+            exit();
+        } else if ($type === "verify_account") {
+            header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/verify_account.php?error=none');
+            exit();
+        }
     } catch (Exception $e) {
-        header('location: ../view/sign_in.php?error=otpError');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_in.php?error=otpError');
         exit();
     }
 }

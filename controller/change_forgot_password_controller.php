@@ -1,8 +1,9 @@
 <?php
-function emptyInputs($user_email)
+
+function emptyInputs($new_password, $confirm_password)
 {
     $result = false;
-    if (empty($user_email)) {
+    if (empty($new_password) || empty($confirm_password)) {
         $result = true;
     } else {
         $result = false;
@@ -10,10 +11,10 @@ function emptyInputs($user_email)
     return $result;
 }
 
-function invalidEmail($user_email)
+function passwordMatch($new_password, $confirm_password)
 {
     $result = false;
-    if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
+    if ($new_password !== $confirm_password) {
         $result = true;
     } else {
         $result = false;

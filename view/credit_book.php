@@ -1,10 +1,10 @@
-<?php require "./includes/session.inc.php"; ?>
+<?php require "../includes/session.inc.php"; ?>
 
 <?php
 $page_title = "Home - Soft Stock Solo Web Application";
 ?>
 
-<?php require "./includes/head.inc.php"; ?>
+<?php require "../includes/head.inc.php"; ?>
 
 <body>
     <div class="container-fluid">
@@ -45,7 +45,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="credit_book.php" class="nav-link text-white">
+                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     menu_book
                                 </span><span class="fs-4 ms-3 d-none d-sm-inline align-middle">Credit Book</span>
@@ -53,14 +53,14 @@ $page_title = "Home - Soft Stock Solo Web Application";
                         </li>
 
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
+                            <a href="manage_account.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     manage_accounts
                                 </span><span class="fs-4 ms-3 d-none d-sm-inline align-middle">Manage Account</span>
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="./includes/sign_out.inc.php" class="nav-link text-white">
+                            <a href="../includes/sign_out.inc.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">logout</span><span class="fs-4 ms-3 d-none d-sm-inline align-middle">Sign Out</span>
                             </a>
                         </li>
@@ -113,4 +113,4 @@ $page_title = "Home - Soft Stock Solo Web Application";
     });
 </script>
 
-<?php require "./includes/foot.inc.php"; ?>
+<?php require "../includes/foot.inc.php"; ?>

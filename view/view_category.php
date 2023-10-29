@@ -57,7 +57,7 @@ $page_title = "View Category - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
+                            <a href="add_category.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     <span class="material-symbols-outlined">
                                         category
@@ -69,7 +69,7 @@ $page_title = "View Category - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="view_category.php" class="nav-link text-white">
+                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     <span class="material-symbols-outlined">
                                         grid_view
@@ -157,26 +157,6 @@ $page_title = "View Category - Soft Stock Solo Web Application";
                     </ul>
                 </div>
             </div>
-            <!-- <div class="col">
-                <div class="container mt-4">
-                    <h1>Add Product</h1>
-                    <form action="your_action.php" method="POST">
-                        <div class="mb-3">
-                            <label for="first-name" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="first-name" placeholder="First Name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="last-name" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="last-name" placeholder="Last Name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div> -->
             <div class="col">
                 <div class="container mt-4">
                     <h1>View Category</h1>
@@ -212,8 +192,6 @@ $page_title = "View Category - Soft Stock Solo Web Application";
                         </thead>
                         <tbody>
                             <?php
-                            // Use PHP to fetch categories from the database and loop through them
-                            // Example code assumes you have a $categories array
                             require '../includes/get_category.inc.php';
 
                             if (empty($categories)) {
@@ -224,11 +202,6 @@ $page_title = "View Category - Soft Stock Solo Web Application";
                                     echo '<td class="editable" data-field="category_name">' . $category['category_name'] . '</td>';
                                     echo '<td class="editable" data-field="other_info">' . $category['other_info'] . '</td>';
                                     echo '</tr>';
-
-                                    // echo '<tr>';
-                                    // echo '<td>' . $category['category_name'] . '</td>';
-                                    // echo '<td>' . $category['other_info'] . '</td>';
-                                    // echo '</tr>';
                                 }
                             }
                             ?>
@@ -266,7 +239,6 @@ $page_title = "View Category - Soft Stock Solo Web Application";
 
         showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
 
-        /*===== LINK ACTIVE =====*/
         const linkColor = document.querySelectorAll('.nav_link')
 
         function colorLink() {
@@ -277,7 +249,6 @@ $page_title = "View Category - Soft Stock Solo Web Application";
         }
         linkColor.forEach(l => l.addEventListener('click', colorLink))
 
-        // Your code to run since DOM is loaded and ready
     });
 </script>
 <script>
@@ -319,7 +290,6 @@ $page_title = "View Category - Soft Stock Solo Web Application";
                 inputCategoryId.value = categoryID;
                 inputCategoryName.value = categoryName;
                 inputOtherInfo.value = otherInfo;
-                // inputCategoryName.setAttribute('data-category-id', categoryID);
             });
         });
     });

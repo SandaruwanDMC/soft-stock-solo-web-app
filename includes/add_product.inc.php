@@ -19,6 +19,10 @@ if (isset($_POST['add-product-submit'])) {
         header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/add_product.php?error=emptyInputs');
         exit();
     }
+    if (barcodeExist($conn, $barcode_number) !== false) {
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/add_product.php?error=barcodeExist');
+        exit();
+    }
     addProduct($conn, $barcode_number, $product_name, $brand, $product_category, $reorder_point, $product_description, $user_id);
 } else {
     header("location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/add_product.php");

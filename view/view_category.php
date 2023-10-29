@@ -1,7 +1,7 @@
 <?php require "../includes/session.inc.php"; ?>
 
 <?php
-$page_title = "Home - Soft Stock Solo Web Application";
+$page_title = "View Category - Soft Stock Solo Web Application";
 ?>
 
 <?php require "../includes/head.inc.php"; ?>
@@ -10,7 +10,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <div class="bg-secondary col-auto min-vh-100 d-flex flex-column justify-content-between">
-            <div class="bg-secondary p-2">
+                <div class="bg-secondary p-2">
                     <a href="#" class="d-flex text-decoration-none mt-1 ms-3 me-3 align-item-center text-white">
                         <span class="fs-3 d-none d-sm-inline">Soft Stock Solo</span>
                         <i class="fs-5 fa fa-gauge"></i>
@@ -57,7 +57,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="add_category.php" class="nav-link text-white">
+                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     <span class="material-symbols-outlined">
                                         category
@@ -91,7 +91,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
+                            <a href="view_product.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     production_quantity_limits
                                 </span>
@@ -157,6 +157,85 @@ $page_title = "Home - Soft Stock Solo Web Application";
                     </ul>
                 </div>
             </div>
+            <!-- <div class="col">
+                <div class="container mt-4">
+                    <h1>Add Product</h1>
+                    <form action="your_action.php" method="POST">
+                        <div class="mb-3">
+                            <label for="first-name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first-name" placeholder="First Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="last-name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div> -->
+            <div class="col">
+                <div class="container mt-4">
+                    <h1>View Category</h1>
+                    <form action="../includes/view_category.inc.php" method="POST" class="needs-validation mt-5" name="view-category" novalidate>
+                        <div class="mb-3 row">
+                            <div class="col">
+                                <input type="text" class="form-control" id="input-view-category-id" name="input-view-category-id" hidden>
+                                <label for="input-view-category-name" class="form-label">Category Name</label>
+                                <input type="text" class="form-control" id="input-view-category-name" name="input-view-category-name" placeholder="Category Name" required>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">
+                                    Please enter the category name.
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="input-view-category-other-info" class="form-label">Other Information</label>
+                                <input type="text" class="form-control" id="input-view-category-other-info" name="input-view-category-other-info" placeholder="Other Information">
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">
+                                    Please enter other info.
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 my-3" name="view-category-submit">Update Category</button>
+                    </form>
+                    <h2 class="mt-5">Available Categories</h2>
+                    <table class="table table-hover table-secondary mt-3">
+                        <thead>
+                            <tr>
+                                <th>Category Name</th>
+                                <th>Other Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            // Use PHP to fetch categories from the database and loop through them
+                            // Example code assumes you have a $categories array
+                            require '../includes/get_category.inc.php';
+
+                            if (empty($categories)) {
+                                echo '<tr><td colspan="2" class="text-center">You don\'t have any saved category to display here</td></tr>';
+                            } else {
+                                foreach ($categories as $category) {
+                                    echo '<tr class="editable-row" data-category-id="' . $category['category_id'] . '">';
+                                    echo '<td class="editable" data-field="category_name">' . $category['category_name'] . '</td>';
+                                    echo '<td class="editable" data-field="other_info">' . $category['other_info'] . '</td>';
+                                    echo '</tr>';
+
+                                    // echo '<tr>';
+                                    // echo '<td>' . $category['category_name'] . '</td>';
+                                    // echo '<td>' . $category['other_info'] . '</td>';
+                                    // echo '</tr>';
+                                }
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -201,5 +280,50 @@ $page_title = "Home - Soft Stock Solo Web Application";
         // Your code to run since DOM is loaded and ready
     });
 </script>
+<script>
+    (function() {
+        "use strict";
+
+        var forms = document.querySelectorAll(".needs-validation");
+
+        Array.prototype.slice.call(forms).forEach(function(form) {
+            form.addEventListener(
+                "submit",
+                function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    form.classList.add("was-validated");
+                },
+                false
+            );
+        });
+    })();
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const editableRows = document.querySelectorAll('.editable-row');
+        const inputCategoryId = document.getElementById('input-view-category-id');
+        const inputCategoryName = document.getElementById('input-view-category-name');
+        const inputOtherInfo = document.getElementById('input-view-category-other-info');
+
+        editableRows.forEach(function(row) {
+            row.addEventListener('click', function() {
+                const categoryID = row.getAttribute('data-category-id');
+                const categoryName = row.querySelector('[data-field="category_name"]').textContent;
+                const otherInfo = row.querySelector('[data-field="other_info"]').textContent;
+
+                inputCategoryId.value = categoryID;
+                inputCategoryName.value = categoryName;
+                inputOtherInfo.value = otherInfo;
+                // inputCategoryName.setAttribute('data-category-id', categoryID);
+            });
+        });
+    });
+</script>
+
 
 <?php require "../includes/foot.inc.php"; ?>

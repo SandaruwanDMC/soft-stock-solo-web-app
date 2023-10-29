@@ -19,7 +19,7 @@ if (isset($_POST['add-product-submit'])) {
         header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/add_product.php?error=emptyInputs');
         exit();
     }
-    if (barcodeExist($conn, $barcode_number) !== false) {
+    if (barcodeExist($conn, $user_id, $barcode_number) !== false) {
         header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/add_product.php?error=barcodeExist');
         exit();
     }

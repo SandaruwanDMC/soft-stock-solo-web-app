@@ -180,7 +180,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
             <div class="col">
                 <div class="container mt-4">
                     <h1>Add Product</h1>
-                    <form action="#" method="POST" class="needs-validation mt-5" novalidate>
+                    <form action="../includes/add_product.inc.php" method="POST" class="needs-validation mt-5" novalidate>
                         <div class="mb-3 row">
                             <div class="col">
                                 <label for="input-add-product-barcode-number" class="form-label">Barcode Number</label>
@@ -191,21 +191,11 @@ $page_title = "Home - Soft Stock Solo Web Application";
                                 </div>
                             </div>
                             <div class="col">
-                                <label for="input-add-product-product-name" class="form-label">Product Name</label>
-                                <input type="text" class="form-control" id="input-add-product-product-name" name="input-add-product-product-name" placeholder="Product Name" required>
+                                <label for="input-add-product-name" class="form-label">Product Name</label>
+                                <input type="text" class="form-control" id="input-add-product-name" name="input-add-product-name" placeholder="Product Name" required>
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">
                                     Please enter the product name.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <div class="col">
-                                <label for="input-add-product-category" class="form-label">Product Category</label>
-                                <input type="text" class="form-control" id="input-add-product-category" name="input-add-product-category" placeholder="Barcode Number" required>
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">
-                                    Please enter the product category.
                                 </div>
                             </div>
                             <div class="col">
@@ -219,16 +209,31 @@ $page_title = "Home - Soft Stock Solo Web Application";
                         </div>
                         <div class="mb-3 row">
                             <div class="col">
-                                <label for="input-add-product-supplier" class="form-label">Supplier</label>
-                                <input type="text" class="form-control" id="input-add-product-supplier" name="input-add-product-supplier" placeholder="Barcode Number" required>
+                                <label for="input-add-product-category" class="form-label">Product Category</label>
+                                <select class="form-select" id="input-add-product-category" name="input-add-product-category" required>
+                                    <?php
+                                    // Use PHP to fetch categories from the database and loop through them
+                                    // Example code assumes you have a $categories array
+                                    require '../includes/get_category.inc.php';
+
+                                    echo '<option selected value="" disabled>Choose Category</option>';
+
+                                    if (!empty($categories)) {
+                                        foreach ($categories as $category) {
+                                            echo '<option value="'.$category['category_id'].'">'.$category['category_name'].'</option>';
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                                <!-- <input type="text" class="form-control" id="input-add-product-category" name="input-add-product-category" placeholder="Barcode Number" required> -->
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">
-                                    Please select the supplier.
+                                    Please enter the product category.
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="input-add-product-reorder-point" class="form-label">Reorder Point</label>
-                                <input type="text" class="form-control" id="input-add-product-reorder-point" name="input-add-product-reorder-point" placeholder="Product Name" required>
+                                <input type="number" class="form-control" id="input-add-product-reorder-point" name="input-add-product-reorder-point" placeholder="Product Name" required>
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">
                                     Please enter the reorder point.

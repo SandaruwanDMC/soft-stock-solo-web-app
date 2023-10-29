@@ -4,7 +4,7 @@ require_once '../includes/dbh.inc.php';
 
 $user_id = $_SESSION['user_id'];
 
-$sql = "SELECT products.product_name, stocks.batch_number, stocks.initial_stock, stocks.current_stock, stocks.expire_date, stocks.cost_price, stocks.unit_price
+$sql = "SELECT products.barcode_number, products.product_name, stocks.stock_id, stocks.batch_number, stocks.initial_stock, stocks.current_stock, stocks.expire_date, stocks.cost_price, stocks.unit_price
         FROM products
         INNER JOIN stocks
         ON products.product_id = stocks.product_id

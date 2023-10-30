@@ -472,12 +472,7 @@ $page_title = "Sell Product - Soft Stock Solo Web Application";
                 inputUnitPrice.value = unitPrice;
                 inputCostPrice.value = costPrice;
 
-                console.log(stockID);
-                console.log(barcodeNumber);
-                console.log(batchNumber);
-                console.log(currentStock);
-                console.log(unitPrice);
-                console.log(costPrice);
+
             }
         });
     });
@@ -503,8 +498,18 @@ $page_title = "Sell Product - Soft Stock Solo Web Application";
             const batchNumber = document.getElementById('input-sell-product-batch-number').value;
             const costPrice = document.getElementById('input-sell-product-cost-price').value;
             const unitPrice = document.getElementById('input-sell-product-unit-price').value;
-            const currentStock = document.getElementById('input-sell-product-current-stock').value;
-            const quantity = document.getElementById('input-sell-product-quantity').value;
+            const currentStock = parseInt(document.getElementById('input-sell-product-current-stock').value, 10);
+            const quantity = parseInt(document.getElementById('input-sell-product-quantity').value, 10);
+
+            console.log(stockId);
+            console.log(productName);
+            console.log(barcodeNumber);
+            console.log(batchNumber);
+            console.log(costPrice);
+            console.log(unitPrice);
+            console.log(quantity);
+            console.log(currentStock);
+            console.log(currentStock >= quantity);
 
             if (stockId && productName && barcodeNumber && batchNumber && costPrice && unitPrice && quantity && currentStock && (currentStock >= quantity)) {
 

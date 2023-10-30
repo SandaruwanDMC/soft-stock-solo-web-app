@@ -52,7 +52,7 @@ function signInUser($conn, $user_email, $user_password)
         if($is_verified !== 1){
             generateOTP($conn, $user_id, $user_email);
         } else {
-            header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/dashboard.php?error=none');
+            header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sell_product.php?error=none');
             exit();
         }
     }

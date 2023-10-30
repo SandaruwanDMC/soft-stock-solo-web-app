@@ -16,7 +16,7 @@ $page_title = "Add Category - Soft Stock Solo Web Application";
                         <i class="fs-5 fa fa-gauge"></i>
                     </a>
                     <ul class="nav nav-pills flex-column mt-1">
-                        <li class="nav-item py-2 py-sm-0 my-1">
+                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="dashboard.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     bar_chart_4_bars
@@ -25,7 +25,7 @@ $page_title = "Add Category - Soft Stock Solo Web Application";
                                     Dashboard
                                 </span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="sell_product.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
@@ -36,7 +36,7 @@ $page_title = "Add Category - Soft Stock Solo Web Application";
                                 </span>
                             </a>
                         </li>
-                        <li class="nav-item py-2 py-sm-0 my-1">
+                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="lend_product.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     qr_code_scanner
@@ -45,8 +45,8 @@ $page_title = "Add Category - Soft Stock Solo Web Application";
                                     Lend Product
                                 </span>
                             </a>
-                        </li>
-                        <li class="nav-item py-2 py-sm-0 my-1">
+                        </li> -->
+                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="debtor_records.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     menu_book
@@ -55,7 +55,7 @@ $page_title = "Add Category - Soft Stock Solo Web Application";
                                     Debtor Records
                                 </span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
@@ -122,7 +122,7 @@ $page_title = "Add Category - Soft Stock Solo Web Application";
                                 </span>
                             </a>
                         </li>
-                        <li class="nav-item py-2 py-sm-0 my-1">
+                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="view_profit_details.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     <span class="material-symbols-outlined">
@@ -133,7 +133,7 @@ $page_title = "Add Category - Soft Stock Solo Web Application";
                                     View Profit Details
                                 </span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="manage_account.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">

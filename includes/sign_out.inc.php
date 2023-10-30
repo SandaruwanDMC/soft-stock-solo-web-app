@@ -4,6 +4,8 @@ session_start();
 session_unset();
 session_destroy();
 
+
+
 header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/index.php');
         exit;
 

@@ -159,6 +159,16 @@ $page_title = "Sell Product - Soft Stock Solo Web Application";
                                 </span>
                             </a>
                         </li>
+                        <li class="nav-item py-2 py-sm-0 my-1">
+                            <a href="lend_product.php" class="nav-link text-white">
+                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
+                                    qr_code_scanner
+                                </span>
+                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
+                                    Lend Product
+                                </span>
+                            </a>
+                        </li>
                         <!-- <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="view_profit_details.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">

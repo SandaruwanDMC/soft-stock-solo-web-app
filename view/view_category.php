@@ -122,6 +122,20 @@ $page_title = "View Category - Soft Stock Solo Web Application";
                                 </span>
                             </a>
                         </li>
+                        <li class="nav-item py-2 py-sm-0 my-1">
+                            <a href="add_debtor.php" class="nav-link text-white">
+                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
+                                    <span class="material-symbols-outlined">
+                                        <span class="material-symbols-outlined">
+                                            person_add
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
+                                    Add Debtor
+                                </span>
+                            </a>
+                        </li>
                         <!-- <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="view_profit_details.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">

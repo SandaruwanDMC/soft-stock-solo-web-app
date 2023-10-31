@@ -1,7 +1,7 @@
 <?php require "../includes/session.inc.php"; ?>
 
 <?php
-$page_title = "View Stock - Soft Stock Solo Web Application";
+$page_title = "Add Category - Soft Stock Solo Web Application";
 ?>
 
 <?php require "../includes/head.inc.php"; ?>
@@ -48,16 +48,6 @@ $page_title = "View Stock - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <!-- <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="lend_product.php" class="nav-link text-white">
-                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
-                                    qr_code_scanner
-                                </span>
-                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
-                                    Lend Product
-                                </span>
-                            </a>
-                        </li> -->
-                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="debtor_records.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     menu_book
@@ -93,7 +83,7 @@ $page_title = "View Stock - Soft Stock Solo Web Application";
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="add_product.php" class="nav-link text-white">
-                                <span class=" material-symbols-outlined fa-m me-1 fa-fw align-middle">
+                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     add_shopping_cart
                                 </span>
                                 <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
@@ -113,7 +103,7 @@ $page_title = "View Stock - Soft Stock Solo Web Application";
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="add_stock.php" class="nav-link text-white">
-                                <span class=" material-symbols-outlined fa-m me-1 fa-fw align-middle">
+                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     inventory
                                 </span>
                                 <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
@@ -122,7 +112,7 @@ $page_title = "View Stock - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
+                            <a href="view_stock.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     <span class="material-symbols-outlined">
                                         inventory_2
@@ -160,7 +150,7 @@ $page_title = "View Stock - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="lend_product.php" class="nav-link text-white">
+                            <a href="lend_product.php" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     qr_code_scanner
                                 </span>
@@ -204,86 +194,56 @@ $page_title = "View Stock - Soft Stock Solo Web Application";
                     </ul>
                 </div>
             </div>
+            <!-- <div class="col">
+                <div class="container mt-4">
+                    <h1>Add Product</h1>
+                    <form action="your_action.php" method="POST">
+                        <div class="mb-3">
+                            <label for="first-name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first-name" placeholder="First Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="last-name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div> -->
             <div class="col">
                 <div class="container mt-4">
-                    <h1>View Stock</h1>
-                    <form action="../includes/view_stock.inc.php" method="POST" class="needs-validation mt-5" novalidate>
+                    <h1>Lend Product</h1>
+                    <form action="../includes/lend_product.inc.php" method="POST" class="needs-validation mt-5" novalidate>
                         <div class="mb-3 row">
                             <div class="col">
-                                <input type="text" class="form-control" id="input-view-stock-id" name="input-view-stock-id" hidden>
-                                <label for="input-view-stock-barcode-number" class="form-label">Barcode Number</label>
-                                <input type="text" class="form-control" id="input-view-stock-barcode-number" name="input-view-stock-barcode-number" placeholder="Barcode Number" disabled>
+                                <input type="text" class="form-control" id="input-lend_product-debtor-id" name="input-lend_product-debtor-id" hidden>
+                                <label for="input-lend_product-debtor-name" class="form-label">Debtor Name</label>
+                                <input type="text" class="form-control" id="input-lend_product-debtor-name" name="input-lend_product-debtor-name" placeholder="Debtor Name" required readonly>
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">
-                                    Please enter the barcode number.
+                                    Please enter the debtor name.
                                 </div>
                             </div>
                             <div class="col">
-                                <label for="input-view-stock-batch-number" class="form-label">Batch Number</label>
-                                <input type="text" class="form-control" id="input-view-stock-batch-number" name="input-view-stock-batch-number" placeholder="Batch Number" disabled>
+                                <label for="input-lend_product-invoice-id" class="form-label">Invoice Number</label>
+                                <input type="text" class="form-control" id="input-lend_product-invoice-id" name="input-lend_product-invoice-id" placeholder="Invoice Number" readonly required>
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">
-                                    Please enter the batch number.
+                                    Please enter the invoice number.
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <div class="col">
-                                <label for="input-view-stock-initial-stock" class="form-label">Initial Stock</label>
-                                <input type="number" class="form-control" id="input-view-stock-initial-stock" name="input-view-stock-initial-stock" placeholder="Initial Stock" required>
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">
-                                    Please enter the initial stock.
-                                </div>
-                            </div>
-                            <div class="col">
-                                <label for="input-view-stock-current-stock" class="form-label">Current Stock</label>
-                                <input type="number" class="form-control" id="input-view-stock-current-stock" name="input-view-stock-current-stock" placeholder="Current Stock" required>
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">
-                                    Please enter the current stock.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <div class="col">
-                                <label for="input-view-stock-expire-date" class="form-label">Expire Date</label>
-                                <input type="date" class="form-control" id="input-view-stock-expire-date" name="input-view-stock-expire-date" placeholder="Expire Date" required>
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">
-                                    Please select the expire date.
-                                </div>
-                            </div>
-                            <div class="col">
-                                <label for="input-view-stock-cost-price" class="form-label">Cost Price</label>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text">Rs.</span>
-                                    <input type="number" class="form-control" id="input-view-stock-cost-price" name="input-view-stock-cost-price" placeholder="Cost Price" min="0.00" max="10000.00" step="0.01" required>
-                                </div>
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">
-                                    Please enter the cost price.
-                                </div>
-                            </div>
-                            <div class="col">
-                                <label for="input-view-stock-unit-price" class="form-label">Unit Price</label>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text">Rs.</span>
-                                    <input type="number" class="form-control" id="input-view-stock-unit-price" name="input-view-stock-unit-price" placeholder="Unit Price" min="0.00" max="10000.00" step="0.01" required>
-                                </div>
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">
-                                    Please enter the unit price.
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg w-100 mt-2" name="view-stock-submit">Update Stock</button>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 my-3" name="lend-product-submit">Lend Product</button>
                     </form>
                     <?php
                     if (isset($_GET["error"])) {
                         if ($_GET["error"] == "emptyInputs") {
                     ?>
-                            <div class="alert alert-danger d-flex align-items-center mt-1" role="alert">
+                            <div class="alert alert-danger d-flex align-items-center" role="alert">
                                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
                                     <use xlink:href="#exclamation-triangle-fill" />
                                 </svg>
@@ -292,58 +252,81 @@ $page_title = "View Stock - Soft Stock Solo Web Application";
                                 </div>
                             </div>
                         <?php
-                        } else if ($_GET["error"] == "batchNumberExist") {
+                        } else if ($_GET["error"] == "invoiceIdExist") {
                         ?>
-                            <div class="alert alert-danger d-flex align-items-center mt-1" role="alert">
+                            <div class="alert alert-danger d-flex align-items-center" role="alert">
                                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
                                     <use xlink:href="#exclamation-triangle-fill" />
                                 </svg>
                                 <div>
-                                    You have entered an exist batch number.
+                                    This invoice is assigned to the selected debtor or someone else.
                                 </div>
                             </div>
                     <?php
                         }
                     }
                     ?>
-                    <h2 class="mt-5">Available Stocks</h2>
-                    <input type="text" id="search-input" class="form-control" placeholder="Search for products">
-                    <table class="table table-hover table-secondary mt-2" id="product-table">
-                        <thead>
-                            <tr>
-                                <th>Barcode Number</th>
-                                <th>Product Name</th>
-                                <th>Batch Number</th>
-                                <th>Initial Stock</th>
-                                <th>Current Stock</th>
-                                <th>Expire Date</th>
-                                <th>Cost Price</th>
-                                <th>Unit Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            require '../includes/get_stock.inc.php';
+                    <div class="mb-3 row">
+                        <div class="col">
+                            <h2 class="mt-5">Available Debtors</h2>
+                            <input type="text" id="search-input" class="form-control" placeholder="Search for debtors">
+                            <table class="table table-hover table-secondary mt-3" id="product-table">
+                                <thead>
+                                    <tr>
+                                        <th>Debtor Name</th>
+                                        <th>NIC</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    // Use PHP to fetch categories from the database and loop through them
+                                    // Example code assumes you have a $categories array
+                                    require '../includes/get_debtor.inc.php';
 
-                            if (empty($stocks)) {
-                                echo '<tr><td colspan="8" class="text-center">No stock data available.</td></tr>';
-                            } else {
-                                foreach ($stocks as $stockItem) {
-                                    echo '<tr class="editable-row" data-product-id="' . $stockItem['stock_id'] . '">';
-                                    echo '<td class="editable" data-field="barcode_number">' . $stockItem['barcode_number'] . '</td>';
-                                    echo '<td>' . $stockItem['product_name'] . '</td>';
-                                    echo '<td class="editable" data-field="batch_number">' . $stockItem['batch_number'] . '</td>';
-                                    echo '<td class="editable" data-field="initial_stock">' . $stockItem['initial_stock'] . '</td>';
-                                    echo '<td class="editable" data-field="current_stock">' . $stockItem['current_stock'] . '</td>';
-                                    echo '<td class="editable" data-field="expire_date">' . $stockItem['expire_date'] . '</td>';
-                                    echo '<td class="editable" data-field="cost_price">' . $stockItem['cost_price'] . '</td>';
-                                    echo '<td class="editable" data-field="unit_price">' . $stockItem['unit_price'] . '</td>';
-                                    echo '</tr>';
-                                }
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                                    if (empty($debtors)) {
+                                        echo '<tr><td colspan="2" class="text-center">You don\'t have any saved debtor to display here</td></tr>';
+                                    } else {
+                                        foreach ($debtors as $debtor) {
+                                            echo '<tr class="editable-row" data-debtor-id="' . $debtor['debtor_id'] . '">';
+                                            echo '<td class="editable" data-field="debtor_name">' . $debtor['debtor_name'] . '</td>';
+                                            echo '<td class="editable" data-field="debtor_nic">' . $debtor['debtor_nic'] . '</td>';
+                                            echo '</tr>';
+                                        }
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <h2 class="mt-5">Latest Invoices</h2>
+                            <table class="table table-hover table-secondary mt-3" id="invoice-table">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice Number</th>
+                                        <th>Total Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    // Use PHP to fetch categories from the database and loop through them
+                                    // Example code assumes you have a $categories array
+                                    require '../includes/get_latest_invoices.inc.php';
+
+                                    if (empty($invoices)) {
+                                        echo '<tr><td colspan="2" class="text-center">You don\'t have any invoices to display here</td></tr>';
+                                    } else {
+                                        foreach ($invoices as $invoice) {
+                                            echo '<tr class="editable-row">';
+                                            echo '<td class="editable" data-field="invoice_id">' . $invoice['invoice_id'] . '</td>';
+                                            echo '<td>' . $invoice['total_amount'] . '</td>';
+                                            echo '</tr>';
+                                        }
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -412,7 +395,6 @@ $page_title = "View Stock - Soft Stock Solo Web Application";
         });
     })();
 </script>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
@@ -422,7 +404,7 @@ $page_title = "View Stock - Soft Stock Solo Web Application";
             // Send the search query to the server for processing
             $.ajax({
                 type: 'POST',
-                url: '../includes/search_stocks.inc.php', // Create this PHP file
+                url: '../includes/search_debtor_to_lend.inc.php', // Create this PHP file
                 data: {
                     search: searchQuery
                 },
@@ -437,35 +419,32 @@ $page_title = "View Stock - Soft Stock Solo Web Application";
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const productTable = document.getElementById('product-table');
-        const inputStockId = document.getElementById('input-view-stock-id');
-        const inputBarcodeNumber = document.getElementById('input-view-stock-barcode-number');
-        const inputBatchNumber = document.getElementById('input-view-stock-batch-number');
-        const inputInitialStock = document.getElementById('input-view-stock-initial-stock');
-        const inputCurrentStock = document.getElementById('input-view-stock-current-stock');
-        const inputExpireDate = document.getElementById('input-view-stock-expire-date');
-        const inputCostPrice = document.getElementById('input-view-stock-cost-price');
-        const inputUnitPrice = document.getElementById('input-view-stock-unit-price');
+        const inputDebtorId = document.getElementById('input-lend_product-debtor-id');
+        const inputDebtorName = document.getElementById('input-lend_product-debtor-name');
 
         productTable.addEventListener('click', function(event) {
             if (event.target.closest('.editable-row')) {
                 const row = event.target.closest('.editable-row');
-                const stockID = row.getAttribute('data-product-id');
-                const barcodeNumber = row.querySelector('[data-field="barcode_number"]').textContent;
-                const batchNumber = row.querySelector('[data-field="batch_number"]').textContent;
-                const initialStock = row.querySelector('[data-field="initial_stock"]').textContent;
-                const currentStock = row.querySelector('[data-field="current_stock"]').textContent;
-                const expireDate = row.querySelector('[data-field="expire_date"]').textContent;
-                const costPrice = row.querySelector('[data-field="cost_price"]').textContent;
-                const unitPrice = row.querySelector('[data-field="unit_price"]').textContent;
+                const debtorID = row.getAttribute('data-debtor-id');
+                const debtorName = row.querySelector('[data-field="debtor_name"]').textContent;
 
-                inputStockId.value = stockID;
-                inputBarcodeNumber.value = barcodeNumber;
-                inputBatchNumber.value = batchNumber;
-                inputInitialStock.value = initialStock;
-                inputCurrentStock.value = currentStock;
-                inputExpireDate.value = expireDate;
-                inputCostPrice.value = costPrice;
-                inputUnitPrice.value = unitPrice;
+                inputDebtorId.value = debtorID;
+                inputDebtorName.value = debtorName;
+            }
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const invoiceTable = document.getElementById('invoice-table');
+        const inputInvoiceId = document.getElementById('input-lend_product-invoice-id');
+
+        invoiceTable.addEventListener('click', function(event) {
+            if (event.target.closest('.editable-row')) {
+                const row = event.target.closest('.editable-row');
+                const invoiceId = row.querySelector('[data-field="invoice_id"]').textContent;
+
+                inputInvoiceId.value = invoiceId;
             }
         });
     });

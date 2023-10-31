@@ -315,7 +315,7 @@ $page_title = "Sell Product - Soft Stock Solo Web Application";
                                 <label for="input-sell-product-invoice-details-total" class="form-label">Total</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Rs.</span>
-                                    <input type="text" class="form-control" id="input-sell-product-invoice-details-total" name="input-sell-product-invoice-details-total" placeholder="Total" disabled>
+                                    <input type="text" class="form-control" id="input-sell-product-invoice-details-total" name="input-sell-product-invoice-details-total" placeholder="Total" readonly>
                                 </div>
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">

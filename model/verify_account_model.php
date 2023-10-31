@@ -35,7 +35,7 @@ function verifyAccount($conn, $user_id, $otp)
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
-        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/dashboard.php?error=none');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sell_product.php?error=none');
         exit();
     }
 }

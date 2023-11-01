@@ -268,6 +268,13 @@ $page_title = "Home - Soft Stock Solo Web Application";
                             </table>
                         </div>
                     </div>
+                    <div class="mb-3 row">
+                        <div class="col">
+                            <form action="../includes//generate_pdf.inc.php" method="POST">
+                                <button type="submit" class="btn btn-primary btn-lg w-100 mt-2" name="view-profit-details-print-pdf-submit">Print Report</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

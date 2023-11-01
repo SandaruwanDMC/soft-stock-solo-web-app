@@ -52,7 +52,7 @@ function signInUser($conn, $user_email, $user_password)
         if($is_verified !== 1){
             generateOTP($conn, $user_id, $user_email);
         } else {
-            header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sell_product.php?error=none');
+            header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/dashboard.php?error=none');
             exit();
         }
     }
@@ -64,7 +64,7 @@ function generateOTP($conn, $user_id, $user_email) {
     $sql = "UPDATE user SET is_verified = ?, email_verification_code = ? WHERE user_id = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_up.php?error=stmtFailed');
+        header('location: /Soft_Stock_Solo_Web_App/New/soft-stock-solo-web-app/view/sign_in.php?error=stmtFailed');
         exit();
     }
 

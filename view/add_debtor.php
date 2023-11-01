@@ -16,7 +16,7 @@ $page_title = "Add Debtor - Soft Stock Solo Web Application";
                         <i class="fs-5 fa fa-gauge"></i>
                     </a>
                     <ul class="nav nav-pills flex-column mt-1">
-                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
+                        <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="dashboard.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     bar_chart_4_bars
@@ -25,7 +25,7 @@ $page_title = "Add Debtor - Soft Stock Solo Web Application";
                                     Dashboard
                                 </span>
                             </a>
-                        </li> -->
+                        </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="sell_product.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">

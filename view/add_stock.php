@@ -27,7 +27,7 @@ $page_title = "Add Stock - Soft Stock Solo Web Application";
                         <i class="fs-5 fa fa-gauge"></i>
                     </a>
                     <ul class="nav nav-pills flex-column mt-1">
-                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
+                        <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="dashboard.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     bar_chart_4_bars
@@ -36,7 +36,7 @@ $page_title = "Add Stock - Soft Stock Solo Web Application";
                                     Dashboard
                                 </span>
                             </a>
-                        </li> -->
+                        </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="sell_product.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
@@ -222,7 +222,7 @@ $page_title = "Add Stock - Soft Stock Solo Web Application";
                             <div class="col">
                                 <input type="text" class="form-control" id="input-add-stock-product-id" name="input-add-stock-product-id" hidden>
                                 <label for="input-add-stock-barcode-number" class="form-label">Barcode Number</label>
-                                <input type="text" class="form-control" id="input-add-stock-barcode-number" name="input-add-stock-barcode-number" placeholder="Barcode Number" disabled>
+                                <input type="text" class="form-control" id="input-add-stock-barcode-number" name="input-add-stock-barcode-number" placeholder="Barcode Number" readonly>
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">
                                     Please enter the barcode number.

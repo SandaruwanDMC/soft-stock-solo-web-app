@@ -1,4 +1,6 @@
-<?php require "../includes/session.inc.php"; ?>
+<?php require "../includes/session.inc.php";
+require "../includes/dbh.inc.php";
+require "../model/dashboard_model.php"; ?>
 
 <?php
 $page_title = "Home - Soft Stock Solo Web Application";
@@ -10,7 +12,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <div class="bg-secondary col-auto min-vh-100 d-flex flex-column justify-content-between">
-            <div class="bg-secondary p-2">
+                <div class="bg-secondary p-2">
                     <a href="#" class="d-flex text-decoration-none mt-1 ms-3 me-3 align-item-center text-white">
                         <span class="fs-3 d-none d-sm-inline">Soft Stock Solo</span>
                         <i class="fs-5 fa fa-gauge"></i>
@@ -33,26 +35,6 @@ $page_title = "Home - Soft Stock Solo Web Application";
                                 </span>
                                 <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
                                     Sell Product
-                                </span>
-                            </a>
-                        </li>
-                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="lend_product.php" class="nav-link text-white">
-                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
-                                    qr_code_scanner
-                                </span>
-                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
-                                    Lend Product
-                                </span>
-                            </a>
-                        </li> -->
-                        <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="debtor_records.php" class="nav-link text-white">
-                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
-                                    menu_book
-                                </span>
-                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
-                                    Debtor Records
                                 </span>
                             </a>
                         </li>
@@ -168,7 +150,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
                                 </span>
                             </a>
                         </li>
-                        <li class="nav-item py-2 py-sm-0 my-1">
+                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="view_profit_details.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     <span class="material-symbols-outlined">
@@ -179,7 +161,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
                                     View Profit Details
                                 </span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="manage_account.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
@@ -219,8 +201,118 @@ $page_title = "Home - Soft Stock Solo Web Application";
                     </form>
                 </div>
             </div> -->
+            <div class="col">
+                <div class="container mt-4">
+                    <h1>Product Overview</h1>
+                    <div class="mb-3 row">
+                        <div class="col">
+                            <!-- Total Products -->
+                            <div class="alert alert-info mt-3">
+                                <h4>Total Products</h4>
+                                <p>The total number of products in your inventory: <strong><?php echo $totalProducts; ?></strong></p>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- Products with Lower Stock -->
+                            <div class="alert alert-warning mt-3">
+                                <h4>Products with Lower Stock</h4>
+                                <p>The number of products with lower stock: <strong><?php echo $lowerStock; ?></strong></p>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- Products with Zero Stock -->
+                            <div class="alert alert-danger mt-3">
+                                <h4>Products with Zero Stock</h4>
+                                <p>The number of products with zero stock: <strong><?php echo $zeroStock; ?></strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col">
+
+                            <!-- Table for Products with Lower Stock -->
+                            <h2 class="mt-4">Products with Lower Stock</h2>
+                            <table class="table table-hover table-secondary mt-2">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Stock Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                    require '../includes/get_stock_lower.inc.php';
+
+                                    if (empty($stocks)) {
+                                        echo '<tr><td colspan="2" class="text-center">No products with lower stock.</td></tr>';
+                                    } else {
+                                        foreach ($stocks as $stockItem) {
+                                            echo '<tr>';
+                                            echo '<td>' . $stockItem['product_name'] . '</td>';
+                                            echo '<td>' . $stockItem['current_stock'] . '</td>';
+                                            echo '</tr>';
+                                        }
+                                    }
+                                    ?>
+                                    <!-- <tr>
+                                        <td>Product 1</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Product 2</td>
+                                        <td>15</td>
+                                    </tr> -->
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col">
+                            <!-- Table for Products with Zero Stock -->
+                            <h2 class="mt-4">Products with Zero Stock</h2>
+                            <table class="table table-hover table-secondary mt-2">
+                                <thead>
+                                    <tr>
+                                        <th>Barcode Number</th>
+                                        <th>Product Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    require '../includes/get_stock_zero.inc.php';
+
+                                    if (empty($stocks)) {
+                                        echo '<tr><td colspan="2" class="text-center">No products with zero stock.</td></tr>';
+                                    } else {
+                                        foreach ($stocks as $stockItem) {
+                                            echo '<tr>';
+                                            echo '<td>' . $stockItem['barcode_number'] . '</td>';
+                                            echo '<td>' . $stockItem['product_name'] . '</td>';
+                                            echo '</tr>';
+                                        }
+                                    }
+                                    ?>
+
+                                    <!-- <tr>
+                                        <td>Product 3</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Product 4</td>
+                                        <td>0</td>
+                                    </tr>
+                                    Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
 </body>
 
 <script>

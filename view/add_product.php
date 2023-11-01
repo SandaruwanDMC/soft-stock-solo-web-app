@@ -179,7 +179,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
                                 </span>
                             </a>
                         </li>
-                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
+                        <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="view_profit_details.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     <span class="material-symbols-outlined">
@@ -190,7 +190,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
                                     View Profit Details
                                 </span>
                             </a>
-                        </li> -->
+                        </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="manage_account.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">

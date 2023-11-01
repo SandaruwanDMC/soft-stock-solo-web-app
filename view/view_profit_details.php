@@ -1,7 +1,9 @@
-<?php require "../includes/session.inc.php"; ?>
+<?php require "../includes/session.inc.php";
+require "../includes/dbh.inc.php";
+require "../model/view_profit_details_model.php"; ?>
 
 <?php
-$page_title = "View Category - Soft Stock Solo Web Application";
+$page_title = "Home - Soft Stock Solo Web Application";
 ?>
 
 <?php require "../includes/head.inc.php"; ?>
@@ -11,13 +13,13 @@ $page_title = "View Category - Soft Stock Solo Web Application";
         <div class="row flex-nowrap">
             <div class="bg-secondary col-auto min-vh-100 d-flex flex-column justify-content-between">
                 <div class="bg-secondary p-2">
-                    <a href="#" class="d-flex text-decoration-none mt-1 ms-3 me-3 align-item-center text-white">
+                    <a href="dashboard.php" class="d-flex text-decoration-none mt-1 ms-3 me-3 align-item-center text-white">
                         <span class="fs-3 d-none d-sm-inline">Soft Stock Solo</span>
                         <i class="fs-5 fa fa-gauge"></i>
                     </a>
                     <ul class="nav nav-pills flex-column mt-1">
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="dashboard.php" class="nav-link text-white">
+                            <a href="#" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     bar_chart_4_bars
                                 </span>
@@ -36,26 +38,6 @@ $page_title = "View Category - Soft Stock Solo Web Application";
                                 </span>
                             </a>
                         </li>
-                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="lend_product.php" class="nav-link text-white">
-                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
-                                    qr_code_scanner
-                                </span>
-                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
-                                    Lend Product
-                                </span>
-                            </a>
-                        </li> -->
-                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="debtor_records.php" class="nav-link text-white">
-                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
-                                    menu_book
-                                </span>
-                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
-                                    Debtor Records
-                                </span>
-                            </a>
-                        </li> -->
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="add_category.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
@@ -137,7 +119,7 @@ $page_title = "View Category - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
+                            <a href="view_debtor.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     <span class="material-symbols-outlined">
                                         badge
@@ -169,7 +151,7 @@ $page_title = "View Category - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="view_profit_details.php" class="nav-link text-white">
+                            <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     <span class="material-symbols-outlined">
                                         info
@@ -205,92 +187,90 @@ $page_title = "View Category - Soft Stock Solo Web Application";
             </div>
             <div class="col">
                 <div class="container mt-4">
-                    <h1>View Debtor</h1>
-                    <form action="../includes/view_debtor.inc.php" method="POST" class="needs-validation mt-5" novalidate>
-                        <div class="mb-3 row">
-                            <div class="col">
-                                <input type="text" class="form-control" id="input-view-debtor-id" name="input-view-debtor-id" hidden>
-                                <label for="input-view-debtor-name" class="form-label">Debtor Name</label>
-                                <input type="text" class="form-control" id="input-view-debtor-name" name="input-view-debtor-name" placeholder="Debtor Name" required>
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">
-                                    Please enter the debtor name.
-                                </div>
-                            </div>
-                            <div class="col">
-                                <label for="input-view-debtor-nic" class="form-label">NIC Number</label>
-                                <input type="text" class="form-control" id="input-view-debtor-nic" name="input-view-debtor-nic" placeholder="National Identity Card Number">
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">
-                                    Please enter debtor NIC number.
-                                </div>
+                    <h1>Profit Details</h1>
+                    <div class="mb-3 row">
+                        <div class="col">
+                            <div class="alert alert-success mt-3">
+                                <h4>Total Profit of Last 30 Days</h4>
+                                <p>Rs. <strong><?php echo $totalProfit; ?></strong></p>
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <div class="col">
-                                <label for="input-view-debtor-contact" class="form-label">Contact</label>
-                                <input type="text" class="form-control" id="input-view-debtor-contact" name="input-view-debtor-contact" placeholder="Contact" required>
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">
-                                    Please enter the debtor contact.
-                                </div>
-                            </div>
-                            <div class="col">
-                                <label for="input-view-debtor-address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="input-view-debtor-address" name="input-view-debtor-address" placeholder="Address">
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">
-                                    Please enter the debtor address.
-                                </div>
+
+                        <div class="col">
+                            <div class="alert alert-warning mt-3">
+                                <h4>Total Debts</h4>
+                                <p>Rs. <strong><?php echo $totalDebt; ?></strong></p>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg w-100 my-3" name="view-debtor-submit">Update Debtor</button>
-                    </form>
-                    <h2 class="mt-5">Available Debtors</h2>
-                    <input type="text" id="search-input" class="form-control" placeholder="Search for debtors">
-                    <table class="table table-hover table-secondary mt-3" id="product-table">
-                        <thead>
-                            <tr>
-                                <th>Debtor Name</th>
-                                <th>NIC Number</th>
-                                <th>Contact</th>
-                                <th>Address</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            require '../includes/get_debtor.inc.php';
 
-                            if (empty($debtors)) {
-                                echo '<tr><td colspan="4" class="text-center">You don\'t have any saved debtor to display here</td></tr>';
-                            } else {
-                                foreach ($debtors as $debtor) {
-                                    echo '<tr class="editable-row" data-debtor-id="' . $debtor['debtor_id'] . '">';
-                                    echo '<td class="editable" data-field="debtor_name">' . $debtor['debtor_name'] . '</td>';
-                                    echo '<td class="editable" data-field="debtor_nic">' . $debtor['debtor_nic'] . '</td>';
-                                    echo '<td class="editable" data-field="debtor_contact">' . $debtor['debtor_contact'] . '</td>';
-                                    echo '<td class="editable" data-field="debtor_address">' . $debtor['debtor_address'] . '</td>';
-                                    echo '</tr>';
-                                }
-                            }
+                        <div class="col">
+                            <div class="alert alert-primary mt-3">
+                                <h4>Item Count Sold in Last 30 Days</h4>
+                                <p><strong><?php echo $itemCount; ?></strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col">
+                            <h2 class="mt-4">Best Selling Products by Profit</h2>
+                            <table class="table table-hover table-secondary mt-2">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Total Profit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    require '../includes/get_best_selling_product_by_profit.inc.php';
 
-                            // if (empty($categories)) {
-                            //     echo '<tr><td colspan="4" class="text-center">You don\'t have any saved category to display here</td></tr>';
-                            // } else {
-                            //     foreach ($categories as $category) {
-                            //         echo '<tr class="editable-row" data-category-id="' . $category['category_id'] . '">';
-                            //         echo '<td class="editable" data-field="category_name">' . $category['category_name'] . '</td>';
-                            //         echo '<td class="editable" data-field="other_info">' . $category['other_info'] . '</td>';
-                            //         echo '</tr>';
-                            //     }
-                            // }
-                            ?>
-                        </tbody>
-                    </table>
+                                    if (empty($products)) {
+                                        echo '<tr><td colspan="2" class="text-center">No products with lower stock.</td></tr>';
+                                    } else {
+                                        foreach ($products as $product) {
+                                            echo '<tr>';
+                                            echo '<td>' . $product['product_name'] . '</td>';
+                                            echo '<td>Rs. ' . $product['total_profit'] . '</td>';
+                                            echo '</tr>';
+                                        }
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col">
+                            <h2 class="mt-4">Best Selling Products by Quantity</h2>
+                            <table class="table table-hover table-secondary mt-2">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Item Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    require '../includes/get_best_selling_product_by_quantity.inc.php';
+
+                                    if (empty($products)) {
+                                        echo '<tr><td colspan="2" class="text-center">No products with zero stock.</td></tr>';
+                                    } else {
+                                        foreach ($products as $product) {
+                                            echo '<tr>';
+                                            echo '<td>' . $product['product_name'] . '</td>';
+                                            echo '<td>' . $product['total_quantity_sold'] . '</td>';
+                                            echo '</tr>';
+                                        }
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 <script>
@@ -319,6 +299,7 @@ $page_title = "View Category - Soft Stock Solo Web Application";
 
         showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
 
+        /*===== LINK ACTIVE =====*/
         const linkColor = document.querySelectorAll('.nav_link')
 
         function colorLink() {
@@ -329,78 +310,8 @@ $page_title = "View Category - Soft Stock Solo Web Application";
         }
         linkColor.forEach(l => l.addEventListener('click', colorLink))
 
+        // Your code to run since DOM is loaded and ready
     });
 </script>
-<script>
-    (function() {
-        "use strict";
-
-        var forms = document.querySelectorAll(".needs-validation");
-
-        Array.prototype.slice.call(forms).forEach(function(form) {
-            form.addEventListener(
-                "submit",
-                function(event) {
-                    if (!form.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-
-                    form.classList.add("was-validated");
-                },
-                false
-            );
-        });
-    })();
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#search-input').on('input', function() {
-            var searchQuery = $(this).val();
-
-            // Send the search query to the server for processing
-            $.ajax({
-                type: 'POST',
-                url: '../includes/search_debtor.inc.php', // Create this PHP file
-                data: {
-                    search: searchQuery
-                },
-                success: function(response) {
-                    // Update the product table with the search results
-                    $('#product-table').html(response);
-                }
-            });
-        });
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const productTable = document.getElementById('product-table');
-        const inputDebtorId = document.getElementById('input-view-debtor-id');
-        const inputDebtorName = document.getElementById('input-view-debtor-name');
-        const inputDebtorNIC = document.getElementById('input-view-debtor-nic');
-        const inputDebtorContact = document.getElementById('input-view-debtor-contact');
-        const inputDebtorAddress = document.getElementById('input-view-debtor-address');
-
-        productTable.addEventListener('click', function(event) {
-            if (event.target.closest('.editable-row')) {
-                const row = event.target.closest('.editable-row');
-                const debtorID = row.getAttribute('data-debtor-id');
-                const debtorName = row.querySelector('[data-field="debtor_name"]').textContent;
-                const debtorNIC = row.querySelector('[data-field="debtor_nic"]').textContent;
-                const debtorContact = row.querySelector('[data-field="debtor_contact"]').textContent;
-                const debtorAddress = row.querySelector('[data-field="debtor_address"]').textContent;
-
-                inputDebtorId.value = debtorID;
-                inputDebtorName.value = debtorName;
-                inputDebtorNIC.value = debtorNIC;
-                inputDebtorContact.value = debtorContact;
-                inputDebtorAddress.value = debtorAddress;
-            }
-        });
-    });
-</script>
-
 
 <?php require "../includes/foot.inc.php"; ?>

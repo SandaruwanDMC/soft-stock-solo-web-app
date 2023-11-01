@@ -46,16 +46,6 @@ $page_title = "Add Category - Soft Stock Solo Web Application";
                                 </span>
                             </a>
                         </li> -->
-                        <!-- <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="debtor_records.php" class="nav-link text-white">
-                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
-                                    menu_book
-                                </span>
-                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
-                                    Debtor Records
-                                </span>
-                            </a>
-                        </li> -->
                         <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="#" class="nav-link text-white" style="background-color: rgba(255, 255, 255, 0.1);">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
@@ -123,16 +113,6 @@ $page_title = "Add Category - Soft Stock Solo Web Application";
                             </a>
                         </li>
                         <li class="nav-item py-2 py-sm-0 my-1">
-                            <a href="lend_product.php" class="nav-link text-white">
-                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
-                                    qr_code_scanner
-                                </span>
-                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
-                                    Lend Product
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item py-2 py-sm-0 my-1">
                             <a href="add_debtor.php" class="nav-link text-white">
                                 <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
                                     <span class="material-symbols-outlined">
@@ -155,6 +135,26 @@ $page_title = "Add Category - Soft Stock Solo Web Application";
                                 </span>
                                 <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
                                     View Debtor
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item py-2 py-sm-0 my-1">
+                            <a href="lend_product.php" class="nav-link text-white">
+                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
+                                    qr_code_scanner
+                                </span>
+                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
+                                    Lend Product
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item py-2 py-sm-0 my-1">
+                            <a href="debtor_records.php" class="nav-link text-white">
+                                <span class="material-symbols-outlined fa-m me-1 fa-fw align-middle">
+                                    menu_book
+                                </span>
+                                <span class="fs-5 ms-3 d-none d-sm-inline align-middle">
+                                    Debtor Records
                                 </span>
                             </a>
                         </li>

@@ -205,7 +205,7 @@ $page_title = "Home - Soft Stock Solo Web Application";
             </div>
             <div class="col">
                 <div class="container mt-4">
-                    <h1>Lend Product</h1>
+                    <h1>Debtor Records</h1>
                     <form action="../includes/debtor_records.inc.php" method="POST" class="needs-validation mt-5" novalidate>
                         <div class="mb-3 row">
                             <div class="col">
